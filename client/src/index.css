@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Tajawal', 'Cairo', system-ui, sans-serif;
+}
+
+body {
+  @apply bg-[#0a0a0b] text-white min-h-screen antialiased;
+}
+
+/* Glass effect */
+.glass {
+  @apply bg-white/[0.05] backdrop-blur-xl border border-white/[0.08];
+}
+
+.glass-strong {
+  @apply bg-white/[0.08] backdrop-blur-2xl border border-white/[0.12];
+}
+
+.input-field {
+  @apply w-full px-4 py-3.5 rounded-xl bg-white/[0.06] border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all;
+}
+
+.btn-primary {
+  @apply w-full py-3.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white font-semibold transition-all duration-200 shadow-lg shadow-violet-600/20 active:scale-[0.98];
+}

@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "dev:client": "npm --prefix client run dev",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:client\"",
+    "build:client": "npm --prefix client run build"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +15,7 @@
   "type": "commonjs",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
@@ -19,9 +23,11 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^26.1.1",
+    "concurrently": "^10.0.4",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.3"
   }
